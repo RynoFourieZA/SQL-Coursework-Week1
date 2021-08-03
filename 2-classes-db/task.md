@@ -75,7 +75,11 @@ where expense_area = 'Better Hospital Food';
 ### 7. Show the date, supplier name, description and amount for transactions with the expense area of 'Better Hospital Food'. You will need to INNER JOIN another table to be able to do this.
 
 ```sql
-
+select date, supplier, description, amount
+from spends
+inner join expense_areas Using(id)
+inner join suppliers Using(id)
+where expense_area = 'Better Hospital Food';
 ```
 
 ### 8. We have just received a late invoice for April! Add a new row to the spends table:
